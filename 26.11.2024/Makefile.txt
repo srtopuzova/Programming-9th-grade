@@ -1,0 +1,22 @@
+all: safeadd.out safesubtract.out safemultiply.out safedivide.out
+
+safeadd.out: safeadd.c util.o safeint.o
+	gcc safeadd.c util.o safeint.o -o safeadd.out
+
+safesubtract.out: safesubtract.c util.o safeint.o
+	gcc safesubtract.c util.o safeint.o -o safesubtract.out
+
+safemultiply.out: safemultiply.c util.o safeint.o
+	gcc safemultiply.c util.o safeint.o -o safemultiply.out
+
+safedivide.out: safedivide.c util.o safeint.o
+	gcc safedivide.c util.o safeint.o -o safedivide.out
+
+util.o: util.h
+	gcc -c util.c -o util.o
+
+safeint.o: safeint.h
+	gcc -c safeint.c -o safeint.o
+
+clean:
+	rm -f *.o *.out

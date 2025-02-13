@@ -1,0 +1,2 @@
+gcc 4_zad.c -o 4_zad.out -lm
+./4_zad.out
